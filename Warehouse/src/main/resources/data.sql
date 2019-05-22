@@ -1,0 +1,10 @@
+insert into products values(1, 'Bread', 20);
+insert into products values(2, 'Jam', 15);
+insert into products values(3, 'Egg', 12);
+insert into products values(4, 'Milk', 25);
+insert into products values(5, 'onion', 19);
+insert into products values(6, 'Tomato', 10);
+insert into products values(7, 'Nutella', 20);
+insert into products values(8, 'Peanut Butter', 22);
+insert into products values(9, 'Chicken', 30);
+insert into products values(10, 'Sugar', 8); 
