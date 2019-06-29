@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
- <%@ taglib prefix="c" 
-           uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -41,8 +41,23 @@ table#Pdisplay th {
   <tr>
     <td>${products.getPid()}</td>
     <td>${products.getPname()}</td> 
-    <td>${pproducts.getPquantity()}</td>
+    <td>${products.getPquantity()}</td>
   </tr>
+</table>
+
+<table id="Pdisplay">
+  <tr>
+    <th>Product ID</th>
+    <th>Product</th> 
+    <th>Quantity</th>
+  </tr>
+  <c:forEach items="${allProducts}" var="allProducts" varStatus="tagStatus">
+  <tr>
+    <td>${allProducts.getPid()}</td>
+    <td>${allProducts.getPname()}</td> 
+    <td>${allProducts.getPquantity()}</td>
+  </tr>
+  </c:forEach>
 </table>
 
 </body>

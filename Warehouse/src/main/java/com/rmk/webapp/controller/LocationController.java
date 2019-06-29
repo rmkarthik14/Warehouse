@@ -40,7 +40,7 @@ public class LocationController {
 		int qty = prod.getPquantity();
 		Location location = new Location(lid,new Products(pid,pName,qty) );
 		repo.save(location);
-		return "home.jsp";
+		return "addLocation.jsp";
 	}
 	
 	@RequestMapping("/getLocationProd")
@@ -49,9 +49,11 @@ public class LocationController {
 		Location location = repo.findById(lid).orElse(new Location());
 		Products product = location.getProducts();
 		List<Object> obj = new ArrayList<>();
+		List<Location> locationList = new ArrayList<>();
 		obj.add(location);
 		obj.add(product);
-		mv.addObject(obj);
+		locationList.add(location);
+		mv.addObject(locationList);
 		return mv;
 	}
 }

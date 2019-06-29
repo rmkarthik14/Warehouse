@@ -56,4 +56,12 @@ public class ProductController {
 		mv.addObject(products);
 		return mv;
 	}
+	
+	@RequestMapping("/viewAllProducts")
+	public ModelAndView viewAllProducts() {
+		ModelAndView mv = new ModelAndView("ProductDisplay.jsp");
+		List<Products> allProducts = (List<Products>) repo.findAll();
+		mv.addObject("allProducts", allProducts);
+		return mv;
+	}
 }

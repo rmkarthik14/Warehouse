@@ -26,7 +26,8 @@
 		Enter Location: <input type="text" name="lid"><br>
 		<input type="submit"><br>
 	</form>
-	${obj} <br>
+	
+	${locationList} <br>
 	
 </body>
 </html>

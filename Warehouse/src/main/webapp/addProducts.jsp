@@ -21,6 +21,11 @@
 		Enter Product Id: <input type="text" name="pid"><br>
 		<input type="submit"><br>
 </form>
+
+<form action="viewAllProducts">
+		<h1>View All Products</h1>
+		<input type="submit"><br>
+</form>
 -----------------------------------------------------------------------------------------------------------
 
 <form action="deleteProducts">
