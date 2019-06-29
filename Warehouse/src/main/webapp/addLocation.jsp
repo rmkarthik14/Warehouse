@@ -8,17 +8,25 @@
 </head>
 <body>
 <form action="addLocation">
-		<h1>Add Products</h1>
-		Enter Location: <input type="text" name="lid"><br>
-		Enter Location Number: <input type="text" name="lname"><br>
-		<input type="submit"><br>
-	</form>
-------------------------------------------------------------------------------
-<form action="productLocation">
 		<h1>Add Location</h1>
-		Enter Location Number: <input type="text" name="lid"><br>
-		Enter Product Id: <input type="text" name="pide"><br>
+		Enter Location: <input type="text" name="lid"><br>
 		<input type="submit"><br>
 	</form>
+	
+------------------------------------------------------------------------------
+<form action="addProductLocation">
+		<h1>Add Product Location</h1>
+		Enter Location Number: <input type="text" name="lid"><br>
+		Enter Product Id: <input type="text" name="pid"><br>
+		<input type="submit"><br>
+	</form>
+
+<form action="getLocationProd">
+		<h1>Get Product Location</h1>
+		Enter Location: <input type="text" name="lid"><br>
+		<input type="submit"><br>
+	</form>
+	${obj} <br>
+	
 </body>
 </html>

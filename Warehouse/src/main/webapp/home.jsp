@@ -9,8 +9,10 @@
 <body>
 	<form action="products" id="product"></form> 
 	<form action="location" id="location"></form>
+	<form action="po" id="po"></form>
 	
 	<button type="submit" form = "product">Products</button>&nbsp
-	<button type="submit" form = "location">Location</button>
+	<button type="submit" form = "location">Location</button>&nbsp
+	<button type="submit" form = "po">PO</button>
 </body>
 </html>
