@@ -61,7 +61,19 @@ public class LocationController {
 	}
 }
 
-*/@RequestMapping("/addProductLocation")
+/*@RequestMapping("/addProductLocation")
+	public String addProductLocation(@RequestParam int lid, int pid) {
+		Products products = new Products();
+		products.setPid(pid);
+		
+		Location location = repo.findById(lid).orElse(new Location());
+		location.setLid(lid);
+		location.getProducts().add(products);
+		repo.save(location);
+		return "addLocation.jsp";
+	}
+	
+	@RequestMapping("/addProductLocation")
 	public String addProductLocation(@RequestParam int lid, int pid) {
 		Products products = new Products();
 		products.setPid(pid);
