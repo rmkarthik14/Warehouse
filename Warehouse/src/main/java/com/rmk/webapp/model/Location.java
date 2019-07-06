@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -15,34 +16,37 @@ public class Location {
 	@Id
 	private int lid;
 	
-	@ManyToOne (fetch = FetchType.LAZY)
-	private Products products;
+	@ManyToMany(cascade = CascadeType.ALL ,fetch = FetchType.EAGER)
+	private List<Products> products;
 	
 	public Location() {}
-	
-	public Location(int lid, Products products) {
-		this.lid = lid;
-		this.products = products;
-	}
 
 	public int getLid() {
 		return lid;
-	}
-
-	public Products getProducts() {
-		return products;
-	}
-
-	public void setProducts(Products products) {
-		this.products = products;
 	}
 
 	public void setLid(int lid) {
 		this.lid = lid;
 	}
 
+	public List<Products> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<Products> products) {
+		this.products = products;
+	}
+
+	public Location(int lid, List<Products> products) {
+		super();
+		this.lid = lid;
+		this.products = products;
+	}
+
 	@Override
 	public String toString() {
 		return "Location [lid=" + lid + ", products=" + products + "]";
 	}
+	
+	
 }

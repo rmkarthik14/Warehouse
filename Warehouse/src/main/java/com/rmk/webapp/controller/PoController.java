@@ -34,7 +34,7 @@ public class PoController {
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/product/{prodId}/purchaseOrder")
 	public void createPo(@RequestBody PurchaseOrder purchaseOrder, @RequestParam int prodId) {
-		purchaseOrder.setPid(new Products(prodId," ",0));
+		purchaseOrder.setPid(new Products(prodId," ",0,null));
 		poService.savePo(purchaseOrder);
 	}
 	

@@ -1,6 +1,7 @@
 package com.rmk.webapp.controller;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,8 +21,8 @@ public class LocationController {
 	
 	@Autowired
 	private LocationRepo repo;
-	
-	
+	private ProdRepo prodRepo;
+
 	@RequestMapping("/location")
 	public String location() {
 		return "addLocation.jsp";
@@ -35,10 +36,12 @@ public class LocationController {
 	
 	@RequestMapping("/addProductLocation")
 	public String addProductLocation(@RequestParam int lid, int pid) {
-		Products prod = new Products();
-		String pName = prod.getPname();
-		int qty = prod.getPquantity();
-		Location location = new Location(lid,new Products(pid,pName,qty) );
+		Products products = new Products();
+		products.setPid(pid);
+		
+		Location location = repo.findById(lid).orElse(new Location());
+		location.setLid(lid);
+		location.getProducts().add(products);
 		repo.save(location);
 		return "addLocation.jsp";
 	}
@@ -47,7 +50,7 @@ public class LocationController {
 	public ModelAndView getLocationProd(@RequestParam int lid) {
 		ModelAndView mv = new ModelAndView("addLocation.jsp");
 		Location location = repo.findById(lid).orElse(new Location());
-		Products product = location.getProducts();
+		List<Products> product = location.getProducts();
 		List<Object> obj = new ArrayList<>();
 		List<Location> locationList = new ArrayList<>();
 		obj.add(location);

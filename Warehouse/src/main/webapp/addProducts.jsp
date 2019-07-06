@@ -5,33 +5,47 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add Products</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<form action="addProducts">
+<nav class="nav-main">
+		<ul>
+			<li><a onclick="hideNav()" href="#add">Add Products</a></li>
+			<li><a onclick="hideView()"href="#view">View Products</a></li>
+			<li><a onclick="hideView()"href="#view">View All Products</a></li>
+			<li><a onclick="hideDelete()"href="#delete">Delete Products</a></li>
+		</ul>
+</nav>
+<div id="add">
+<form class="form" action="addProducts">
 		<h1>Add Products</h1>
-		Enter Product Id: <input type="text" name="pid"><br>
-		Enter Product Name: <input type="text" name="pname"><br>
-		Enter Product Quantity: <input type="text" name="pquantity"><br>
-		<input type="submit"><br>
-	</form>
------------------------------------------------------------------------------------------------------------
+		<p>Enter Product Id:</p> 		<input type="text" name="pid"><br>
+		<p>Enter Product Name:</p> 		<input type="text" name="pname"><br>
+		<p>Enter Product Quantity:</p>	<input type="text" name="pquantity"><br>
+		<button type="submit" class="submitButton">Add</button><br>
+</form>
+</div>
 
-<form action="viewProducts">
+<div id="view" style="display: block;">
+<form class="form" action="viewProducts">
 		<h1>View Products</h1>
-		Enter Product Id: <input type="text" name="pid"><br>
-		<input type="submit"><br>
+		<p>Enter Product Id:</p> <input type="text" name="pid"><br>
+		<button type="submit" class="submitButton">View</button><br>
 </form>
 
-<form action="viewAllProducts">
+<form class="form" action="viewAllProducts">
 		<h1>View All Products</h1>
-		<input type="submit"><br>
+		<button type="submit" class="submitButton">View All</button><br>
 </form>
------------------------------------------------------------------------------------------------------------
+</div>
 
-<form action="deleteProducts">
+<div id="delete" style="visibility: block;">
+<form class="form" action="deleteProducts">
 		<h1>Delete Products</h1>
-		Enter Product Id: <input type="text" name="pid"><br>
-		<input type="submit"><br>
+		<p>Enter Product Id:</p> <input type="text" name="pid"><br>
+		<button type="submit" class="submitButton">Delete</button><br>
 </form>
+</div>
 </body>
+<script src="/javaScript/script.js"></script>
 </html>
