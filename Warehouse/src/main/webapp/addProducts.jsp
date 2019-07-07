@@ -26,7 +26,7 @@
 </form>
 </div>
 
-<div id="view" style="display: block;">
+<div id="view" style="display: none;">
 <form class="form" action="viewProducts">
 		<h1>View Products</h1>
 		<p>Enter Product Id:</p> <input type="text" name="pid"><br>
@@ -39,7 +39,7 @@
 </form>
 </div>
 
-<div id="delete" style="visibility: block;">
+<div id="delete" style="display: none;">
 <form class="form" action="deleteProducts">
 		<h1>Delete Products</h1>
 		<p>Enter Product Id:</p> <input type="text" name="pid"><br>
