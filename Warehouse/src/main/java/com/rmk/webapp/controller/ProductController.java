@@ -1,5 +1,6 @@
 package com.rmk.webapp.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,8 +53,9 @@ public class ProductController {
 	public ModelAndView viewProducts(@RequestParam int pid) {
 		ModelAndView mv = new ModelAndView("ProductDisplay.jsp");
 		Products products = repo.findById(pid).orElse(new Products());
-		//List<Products> products = (List<Products>) repo.findAll();
-		mv.addObject(products);
+		List<Products> allProducts = new ArrayList<>();
+		allProducts.add(products);
+		mv.addObject("allProducts",allProducts);
 		return mv;
 	}
 	

@@ -32,7 +32,8 @@ table#Pdisplay th {
 </style>
 </head>
 <body>
-	<table id="Pdisplay">
+<!-- 
+<table id="Pdisplay">
   <tr>
     <th>Product ID</th>
     <th>Product</th> 
@@ -44,11 +45,12 @@ table#Pdisplay th {
     <td>${products.getPquantity()}</td>
   </tr>
 </table>
+ -->
 
 <table id="Pdisplay">
   <tr>
     <th>Product ID</th>
-    <th>Product</th> 
+    <th><input type="text" id="myInput" onkeyup="searchProducts()" placeholder="Products" title="Type in a name"></th> 
     <th>Quantity</th>
   </tr>
   <c:forEach items="${allProducts}" var="allProducts" varStatus="tagStatus">
@@ -61,4 +63,5 @@ table#Pdisplay th {
 </table>
 
 </body>
+<script src="/javaScript/script.js"></script>
 </html>

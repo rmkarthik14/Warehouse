@@ -12,7 +12,6 @@
 		<ul>
 			<li><a onclick="hideNav()" href="#add">Add Products</a></li>
 			<li><a onclick="hideView()"href="#view">View Products</a></li>
-			<li><a onclick="hideView()"href="#view">View All Products</a></li>
 			<li><a onclick="hideDelete()"href="#delete">Delete Products</a></li>
 		</ul>
 </nav>
