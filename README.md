@@ -9,3 +9,5 @@ Implemanetation Details
   •	Spring Boot
   •	H2 Database
   •	Spring JPA
+  •	JavaScript
+  
