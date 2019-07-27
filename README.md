@@ -1,22 +1,22 @@
 # Warehouse
 Warehouse application implemented using Spring.
 
-  •	Add new items to inventory
+  -	Add new items to inventory
   
-  •	Crud operations on the items in inventory
+  -	Crud operations on the items in inventory
   
-  •	Add Locations in the inventory
+  -	Add Locations in the inventory
   
-  •	Mapp the items to locations
+  -	Mapp the items to locations
   
 
 ##Implemanetation Details
 
-  •	Spring Boot
+  -	Spring Boot
   
-  •	H2 Database
+  -	H2 Database
   
-  •	Spring JPA
+  -	Spring JPA
   
-  •	JavaScript
+  -	JavaScript
   
