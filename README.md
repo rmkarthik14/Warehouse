@@ -9,8 +9,7 @@ Warehouse application implemented using Spring.
   
   -	Mapp the items to locations
   
-
-##Implemanetation Details
+## Implemanetation Details
 
   -	Spring Boot
   
