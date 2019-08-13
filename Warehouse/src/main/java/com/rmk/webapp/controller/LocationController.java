@@ -73,6 +73,7 @@ public class LocationController {
 		locationList.add(location);
 		mv.addObject(locationList);
 		return mv;
+		
 	}
 }
 
