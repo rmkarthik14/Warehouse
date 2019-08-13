@@ -18,24 +18,39 @@ import com.rmk.webapp.model.Products;
 
 @Controller
 public class LocationController {
-	
+/*
+ * Controller class for the product location	
+ */
 	@Autowired
 	private LocationRepo repo;
 	private ProdRepo prodRepo;
 
 	@RequestMapping("/location")
 	public String location() {
+		/*
+		 * Method used to redirect to location page
+		 */
 		return "addLocation.jsp";
 	}
 	
 	@RequestMapping("/addLocation")
 	public String addLocation(Location location) {
+		/*
+		 * Method to add new location
+		 * @param Location location
+		 * @return String location jsp file
+		 */
 		repo.save(location);
 		return "addLocation.jsp";
 	}
 	
 	@RequestMapping("/addProductLocation")
 	public String addProductLocation(@RequestParam int lid, int pid) {
+		/*
+		 * Method to  map the product to specific location
+		 * @param int location Id, int product Id
+		 * @return String addLocation page
+		 */
 		Products products = new Products();
 		products.setPid(pid);
 		

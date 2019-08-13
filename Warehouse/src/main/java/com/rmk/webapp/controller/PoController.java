@@ -4,7 +4,9 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,6 +21,7 @@ import com.rmk.webapp.model.PurchaseOrder;
 import com.rmk.webapp.service.PoService;
 
 @RestController
+@RequestMapping("/po")
 public class PoController {
 	
 	@Autowired
@@ -27,13 +30,14 @@ public class PoController {
 	@Autowired
 	RestPo restPo;
 	
-	@RequestMapping("/po")
+	@RequestMapping(value = "/")
 	public String po() {
 		return "PurchaseOrder.jsp";
 	}
 	
-	@RequestMapping(method = RequestMethod.POST, value = "/product/{prodId}/purchaseOrder")
-	public void createPo(@RequestBody PurchaseOrder purchaseOrder, @RequestParam int prodId) {
+	//@RequestMapping(method = RequestMethod.POST, value = "/product/{prodId}/purchaseOrder")
+	@PostMapping("/product/{prodId}/purchaseOrder")
+	public void createPo(@RequestBody PurchaseOrder purchaseOrder, @PathVariable int prodId) {
 		purchaseOrder.setPid(new Products(prodId," ",0,null));
 		poService.savePo(purchaseOrder);
 	}
